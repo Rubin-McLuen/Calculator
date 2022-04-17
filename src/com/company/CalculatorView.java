@@ -53,4 +53,8 @@ public class CalculatorView extends JPanel{
 
 
     }
+
+    public void setDisplay_num(float num){
+        display_num = num;
+    }
 }
