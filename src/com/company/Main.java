@@ -11,13 +11,9 @@ public class Main {
         JPanel panel = new JPanel();
         panel.setLayout(new BorderLayout());
 
-        JPanel buttons = new CalculatorButtons();
-        JLabel display = new JLabel("Display");
+        JPanel calculatorView = new CalculatorView();
 
-        panel.add(display, BorderLayout.NORTH);
-        panel.add(buttons, BorderLayout.SOUTH);
-
-        frame.add(panel);
+        frame.add(calculatorView);
         frame.pack();
         frame.setVisible(true);
     }
