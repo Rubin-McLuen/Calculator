@@ -4,29 +4,27 @@ import javax.swing.*;
 import java.awt.*;
 
 public class CalculatorView extends JPanel{
-    float display_num = 0;
-    CalculatorController calculatorController;
+    private CalculatorController calculatorController;
 
-    JButton num1;
-    JButton num2;
-    JButton num3;
-    JButton add;
-    JButton num4;
-    JButton num5;
-    JButton num6;
-    JButton subtract;
-    JButton num7;
-    JButton num8;
-    JButton num9;
-    JButton multiply;
-    JButton num0;
-    JSeparator sep1;
-    JButton divide;
-    JSeparator sep2;
+    private JButton num1;
+    private JButton num2;
+    private JButton num3;
+    private JButton add;
+    private JButton num4;
+    private JButton num5;
+    private JButton num6;
+    private JButton subtract;
+    private JButton num7;
+    private JButton num8;
+    private JButton num9;
+    private JButton multiply;
+    private JButton num0;
+    private JButton divide;
 
+    private JLabel display;
     public CalculatorView() {
         setLayout(new BorderLayout());
-        JLabel display = new JLabel(Float.toString(display_num));
+        display = new JLabel(Float.toString(0));
         JPanel buttons = new JPanel();
         buttons.setLayout(new GridLayout(4, 4));
         buttons.setBackground(Color.LIGHT_GRAY);
@@ -34,21 +32,21 @@ public class CalculatorView extends JPanel{
         add(buttons, BorderLayout.SOUTH);
 
 
-        JButton num1 = new JButton("1");
-        JButton num2 = new JButton("2");
-        JButton num3 = new JButton("3");
-        JButton add = new JButton("+");
-        JButton num4 = new JButton("4");
-        JButton num5 = new JButton("5");
-        JButton num6 = new JButton("6");
-        JButton subtract = new JButton("-");
-        JButton num7 = new JButton("7");
-        JButton num8 = new JButton("8");
-        JButton num9 = new JButton("9");
-        JButton multiply = new JButton("*");
-        JButton num0 = new JButton("0");
+        num1 = new JButton("1");
+        num2 = new JButton("2");
+        num3 = new JButton("3");
+        add = new JButton("+");
+        num4 = new JButton("4");
+        num5 = new JButton("5");
+        num6 = new JButton("6");
+        subtract = new JButton("-");
+        num7 = new JButton("7");
+        num8 = new JButton("8");
+        num9 = new JButton("9");
+        multiply = new JButton("*");
+        num0 = new JButton("0");
         JSeparator sep1 = new JSeparator();
-        JButton divide = new JButton("/");
+        divide = new JButton("/");
         JSeparator sep2 = new JSeparator();
 
         buttons.add(num1);
@@ -68,11 +66,11 @@ public class CalculatorView extends JPanel{
         buttons.add(sep2);
         buttons.add(divide);
 
-
+        num0.setText("0");
     }
 
-    public void setDisplay_num(float num){
-        display_num = num;
+    public void updateDisplay(float num){
+        display.setText(String.valueOf(num));
     }
 
     public void addListener(CalculatorController calculatorController) {
@@ -131,15 +129,7 @@ public class CalculatorView extends JPanel{
         return num0;
     }
 
-    public JSeparator getSep1() {
-        return sep1;
-    }
-
     public JButton getDivide() {
         return divide;
-    }
-
-    public JSeparator getSep2() {
-        return sep2;
     }
 }

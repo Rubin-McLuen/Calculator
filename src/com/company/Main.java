@@ -8,10 +8,9 @@ public class Main {
     public static void main(String[] args) {
         JFrame frame = new JFrame("Calculator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JPanel panel = new JPanel();
-        panel.setLayout(new BorderLayout());
-
-        JPanel calculatorView = new CalculatorView();
+        CalculatorView calculatorView = new CalculatorView();
+        CalculatorModel model = new CalculatorModel();
+        CalculatorController controller = new CalculatorController(model, calculatorView);
 
         frame.add(calculatorView);
         frame.pack();

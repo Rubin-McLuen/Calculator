@@ -1,40 +1,50 @@
 package com.company;
 
 public class CalculatorModel {
-    int num;
-    String mode = "None";
+    private float num;
+    private String mode = "None";
+    private float result;
 
     public CalculatorModel() {
     }
 
-    public float calculate(int num2){
-        float result = 0;
-
+    public void calculate(float num2){
+        result = 0;
         switch (mode){
-            case "add":
+            case "+":
                 result = num + num2;
                 break;
 
-            case "subtract":
+            case "-":
                 result = num - num2;
                 break;
 
-            case "multiply":
+            case "*":
                 result = num * num2;
                 break;
 
-            case "divide":
+            case "/":
                 result = num / num2;
                 break;
         }
-        return result;
+        mode = "None";
     }
 
-    public void setNum(int num) {
-        this.num = num;
+    public void setNum(float num) {
+        if (mode == "None") {
+            this.num = num;
+            this.result = num;
+        }
+        else{
+            calculate(num);
+        }
     }
 
     public void setMode(String mode) {
         this.mode = mode;
+    }
+
+    public float getResult() {
+        return result;
     }
 }
