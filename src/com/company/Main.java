@@ -1,7 +1,8 @@
+// THIS IS SHARED ON GITHUB TOO @ https://github.com/Rubin-McLuen/Calculator.git
+
 package com.company;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class Main {
 
